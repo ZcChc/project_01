@@ -69,6 +69,54 @@ git 仓库 的获取方式
   3 将冲突的文件解决完之后  需要再次将文件状态表示为已解决 添加到暂存区
   git push -u orgin master 第一次提交才需要
   后续提交 git push 即可
+
+
+  git checkout --"你要撤销的文件.后缀名"
+
+  取消文件之前添加到暂存区的状态 ->  git reset HEAD "文件"  只有处于未提交状态 才能撤回到未跟踪状态
+
+  跳过暂存区 ->  git commit -a -m"描述信息"  
+
+  移出文件 git rm 0f 你要删除的文件 (仓库本地都没了)[慎用]
+          git rm --cached你要删除的文件 (仓库中没了 本地还有)
+
+   忽略文件  就是可以将不需要被git所管理的文件 剔出去 (.gitignore)名字必须这样书写
+   你要忽略的文件不能是已经放到暂存区的文件
+   quit 表示退出q
+   git log 查看历史提交记录
+
+   可以会退到指定版本 (对应的代码) git reset --hard 提交的id(唯一标识)
+
+   在一行上展示 所有的提交历史 pretty
+   git log --pretty=online
+
+   使用git reset --hard 命令 根据指定的提交 ID 回退到指定版本hard 也是一个强制的命令
+   git reset --hard <CommitID>
+
+   在旧版本中使用 git reflog --pretty=online 命令 查看命令操作的历史
+   git reflog --pretty=onelone
+
+   再次根据最新的提交 ID 跳转到最新的版本
+   git reset --hard<CommitID>
+
+   git ---------------------------
+       开源
+
+
+
+
+   orgin ： 源 此处表示一个别名的意思
+   
+   如何查看当前仓库关联的仓库是什么 ： git remote -v
+   如果地址不是你想关联的 可以删掉 git remote remove origin
+
+   git push -u origin main 
+   添加完远程仓库的关联之后 就要朝仓库进行推送了
+   
+
+
+
+
   
   
 
